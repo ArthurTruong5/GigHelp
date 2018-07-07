@@ -1,0 +1,79 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#home {
+  height: 100%;
+}
+
+#home-cover {
+  /* .. means go one step back and find IMG folder */
+  height: 70vh;
+  background: linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ),url('coder.jpg');
+  /* So Background Image doesn't Loop */
+  background-repeat: no-repeat;
+  /* Will scale the background image as large as possible */
+  background-size: cover;
+  /* The image will be centered within the whole screen  */
+  background-position: center;
+  /* This is a parallax effect */
+  background-attachment: fixed;
+
+}
+
+
+#home-content-box {
+  /* It will make a home-content box as wide as its parent div */
+  width: 100%;
+  /* This div will cover the entire browser window  */
+  height: 100%;
+  /* Behave like a table */
+  display: table;
+}
+
+#home-content-box-inner {
+  /* It will act as a table data for home-content-box */
+  display: table-cell;
+  /* Alignment for an element */
+  vertical-align: middle;
+  text-align: center;
+}
+
+#home-heading h3 {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 700;
+  /* Create space between the words  */
+  margin: 20px 0 20px 0px;
+  text-transform: uppercase;
+}
+
+#home-full-stack h3 {
+  color: #fff;
+}
+
+.front-page .summary {
+  font-size: 35px;
+  font-weight: 200;
+}
+
+#home-content-box-inner {
+
+color: #fff;
+
+}
+
+.title {
+
+  float: left;
+  padding: 15px;
+  color: #fff;
+  line-height: 0px;
+}
+
+#button-home {
+
+  margin: 30px;
+  margin-left: 0px;
+
+}
