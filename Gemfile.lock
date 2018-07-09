@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/decioferreira/bootstrap-generators.git
+  revision: c3b255d1bd4128f6338020234f5a5c48d017827b
+  specs:
+    bootstrap-generators (3.3.4)
+      railties (>= 3.1.0)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: c236286b7d6e73affa1597f62fd51e9dbd268f1c
   specs:
@@ -262,6 +269,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   bootsnap (>= 1.1.0)
+  bootstrap-generators!
   bootstrap-sass (~> 3.3.7)
   byebug
   capybara (>= 2.15, < 4.0)
