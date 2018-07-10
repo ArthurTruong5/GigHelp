@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  task: one
+  name: MyString
+  comment: MyText
+  offer: 1
+
+two:
+  task: two
+  name: MyString
+  comment: MyText
+  offer: 1

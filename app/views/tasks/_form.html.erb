@@ -1,5 +1,4 @@
-
-<%= simple_form_for(@task) do |f| %>
+<%= simple_form_for(@task, html: { class: 'form-inline' }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
@@ -8,6 +7,7 @@
     <%= f.input :description %>
     <%= f.input :due %>
     <%= f.input :people %>
+    <%= f.input :image, as: :file%>
   </div>
 
   <div class="form-actions">
