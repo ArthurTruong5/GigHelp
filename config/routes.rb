@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bids
   resources :tasks
   get 'about/index'
   devise_for :users, controllers: { registration: 'registrations' }

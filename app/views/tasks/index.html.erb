@@ -1,9 +1,9 @@
 <div class="page-header">
-  <%= link_to new_task_path, class: 'btn btn-primary' do %>
+  <%= link_to new_task_path, class: 'btn btn-primary', style: 'color: #fff;' do %>
     <span class="glyphicon glyphicon-plus"></span>
-    New Task
+    Create a Task
   <% end %>
-  <h1>Listing tasks</h1>
+  <h1>Tasks Available</h1>
 </div>
 
 <div class="table-responsive">
@@ -13,8 +13,8 @@
             <th>Title</th>
             <th>Description</th>
             <th>Due</th>
-            <th>People</th>
-            <th></th>
+            <th>People Needed</th>
+            <th>Image</th>
         <th></th>
         <th></th>
       </tr>
@@ -27,6 +27,7 @@
                       <td><%= task.description %></td>
                       <td><%= task.due %></td>
                       <td><%= task.people %></td>
+                  
                     <td><%= link_to 'Show', task %></td>
           <td><%= link_to 'Edit', edit_task_path(task) %></td>
           <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

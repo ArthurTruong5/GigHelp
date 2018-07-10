@@ -1,14 +1,13 @@
 
-<%= simple_form_for(@task, html: { class: 'form-inline' }) do |f| %>
+<%= simple_form_for(@bid, html: { class: 'form-inline' }) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :due %>
-    <%= f.input :people %>
-    <%= f.file_field :image %>
+    <%= f.association :task %>
+    <%= f.input :name %>
+    <%= f.input :comment %>
+    <%= f.input :offer %>
   </div>
 
   <div class="form-actions">
