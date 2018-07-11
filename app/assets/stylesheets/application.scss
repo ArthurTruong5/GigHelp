@@ -18,12 +18,24 @@
  @import "bootstrap";
  @import "magnific-popup";
 
+ h3, .h3 {
+     font-size: 48px;
+     font-family: 'Poppins', sans-serif;
+ }
+
+
 body {
   padding: 0px;
 }
 
 label {
   padding: 15px;
+}
+
+#primary-menu ul li > a {
+
+  color: #fff;
+
 }
 
 .alert-success, .alert-danger {
@@ -89,7 +101,45 @@ label {
     margin: 10px;
 }
 .btn-default {
-    color: #333;
-    background-color: #75b9f3;
-    border-color: #79bffb;
+    color: #black;
+    background-color: #FFE5B5;
+    border-color: #FFE5B5;
+}
+.btn-default, li {
+
+  font-weight: 900;
+
+}
+
+.custom-button {
+	padding: 0 26px;
+	font-size: 16px;
+	height: 46px;
+	line-height: 46px;
+  border-radius: 23px;
+  font-weight: 700;
+}
+
+.navbar-default, a {
+
+    background-color: #d9534f;
+    border: 0;
+
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.button-unique {
+
+  background-color: #d9534f;
+  color: #fff;
 }

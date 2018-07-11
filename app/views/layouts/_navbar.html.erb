@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+<nav class="navbar navbar-default" style="margin-bottom: 0px;">
 <div class="container-fluid">
 <!-- Brand and toggle get grouped for better mobile display -->
 <div class="navbar-header">
@@ -8,7 +8,7 @@
     <span class="icon-bar"></span>
     <span class="icon-bar"></span>
   </button>
-  <a class="navbar-brand" href="#">GigHelp</a>
+  <a class="navbar-brand" style="color: #fff; font-weight: 900;" href="#">GigHelp</a>
 </div>
 
 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,7 +37,6 @@
     <li><%= link_to "Sign Up", new_user_registration_path %></li>
     <%= render 'layouts/log-in' %>
     <li><button type="button" class="btn btn-default btn-sm" id="myBtn">Login</li>
-    <li><%= link_to "Sign In With Facebook", user_facebook_omniauth_authorize_url() %></li>
   </ul>
       <% end %>
 </div><!-- /.navbar-collapse -->

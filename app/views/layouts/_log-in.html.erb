@@ -22,17 +22,17 @@
           <div class="checkbox">
             <label><%= f.input :remember_me, as: :boolean, style: 'margin: 0px;' if devise_mapping.rememberable? %></label>
           </div>
-          <button type="submit" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+          <button type="submit" class="btn btn-default btn-success btn-block button-unique"><span class="glyphicon glyphicon-off"></span> Login</button>
         </form>
         <br>
-          <%= button_to "Sign In With Facebook", user_facebook_omniauth_authorize_url(), class: 'btn btn-default btn-success btn-block' %>
+          <%= button_to user_facebook_omniauth_authorize_url(), class: 'btn btn-default btn-success btn-block button-unique' do %>
+          Sign In With Facebook <i class="fab fa-facebook"></i>
+          <% end %>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-        <%= f.button :submit, "Log in", class: 'btn btn-default btn-default pull-left button-with-image' %>
+        <button type="submit" class="btn btn-default btn-default pull-left button-unique" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
+        <%= f.button :submit, "Log in", class: 'btn btn-default btn-default pull-left button-with-image button-unique' %>
         <% end %>
-        <p>Not a member? <a href="#">Sign Up</a></p>
-        <p>Forgot <a href="#">Password?</a></p>
       </div>
     </div>
   </div>
