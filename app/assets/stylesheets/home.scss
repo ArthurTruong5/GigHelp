@@ -8,8 +8,8 @@
 
 #home-cover {
   /* .. means go one step back and find IMG folder */
-  height: 70vh;
-  background: linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ),url('coder.jpg');
+  height: 100vh;
+  background: linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ),url('hero.jpg');
   /* So Background Image doesn't Loop */
   background-repeat: no-repeat;
   /* Will scale the background image as large as possible */
@@ -72,8 +72,9 @@ color: #fff;
 }
 
 #button-home {
-
   margin: 30px;
   margin-left: 0px;
+}
 
+#about-cover {
 }

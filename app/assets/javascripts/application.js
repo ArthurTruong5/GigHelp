@@ -16,4 +16,12 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require jquery.turbolinks
+//= require magnific-popup
 //= require_tree .
+
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal").modal();
+    });
+});

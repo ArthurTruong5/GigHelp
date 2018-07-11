@@ -9,6 +9,10 @@ Devise.setup do |config|
                 Rails.application.credentials.facebook[:app_id],
                 Rails.application.credentials.facebook[:app_secret],
                 scope: 'email,user_likes'
+
+
+  config.http_authenticatable_on_xhr = false
+  config.navigational_formats = ["*/*", :html, :json]
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
