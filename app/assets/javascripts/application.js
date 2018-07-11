@@ -16,4 +16,9 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require magnific-popup
 //= require_tree .
+
+// $(document).ready(function(){
+//
+// });

@@ -3,8 +3,8 @@ Rails.application.routes.draw do
     resources :bids
   end
   get 'about/index'
-  devise_for :users, controllers: { registration: 'registrations' }, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
+  devise_for :users, controllers: { registration: 'registrations' }, controllers: { sessions: 'sessions' }, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'home#index'
