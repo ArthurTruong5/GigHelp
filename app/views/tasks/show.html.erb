@@ -29,11 +29,13 @@
 
 <div class="col-md-7 col-md-offset-1">
 
+
   <h1 class="review_title"><%= @task.title %></h1>
   <p><%= @task.description %></p>
 
          <% if @bids.blank? %>
-           <h3>Hi, if you would like to bid. Click on the bid button below.</h3>
+         <p>Hi <%= current_user.name %>, would you like to bid?</p>
+           <p>Hi, if you would like to bid. Click on the bid button below.</p>
            <%= link_to "Bid Task", new_task_bid_path(@task), class: "btn btn-danger" %>
          <% else %>
            <% @bids.each do |bid| %>
@@ -43,6 +45,7 @@
                <p><%= bid.offer %></p>
              </div>
            </div>
+          <p>Bid was created by <%= bid.name.capitalize %></p>
            <div class="time_ago">
             <p>Bid created <%= time_ago_in_words bid.created_at %> ago</p>
            </div>

@@ -28,6 +28,9 @@
           <%= button_to user_facebook_omniauth_authorize_url(), class: 'btn btn-default btn-success btn-block button-unique' do %>
           Sign In With Facebook <i class="fab fa-facebook"></i>
           <% end %>
+        <%= button_to user_google_oauth2_omniauth_authorize_url(), class: 'btn btn-default btn-success btn-block button-unique' do %>
+        Sign In With Google <i class="fab fa-google"></i>
+        <% end %>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-default btn-default pull-left button-unique" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
