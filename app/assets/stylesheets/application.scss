@@ -9,7 +9,7 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require bootstrap-datepicker3
  *= require_tree .
  *= require_self
  */
@@ -29,7 +29,20 @@ body {
 }
 
 label {
-  padding: 15px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 15px;
+}
+
+p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form {
+    margin-bottom: 30px;
 }
 
 #primary-menu ul li > a {
@@ -120,12 +133,6 @@ label {
   font-weight: 700;
 }
 
-.navbar-default, a {
-
-    background-color: #d9534f;
-    border: 0;
-
-}
 
 .navbar-default .navbar-nav > li > a {
     color: #fff;
@@ -142,4 +149,14 @@ label {
 
   background-color: #d9534f;
   color: #fff;
+}
+
+.form-control {
+    border-radius: 3px;
+}
+
+::selection {
+    background: #1ABC9C;
+    color: #FFF;
+    text-shadow: none;
 }

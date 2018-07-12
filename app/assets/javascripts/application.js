@@ -17,6 +17,7 @@
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require magnific-popup
+//= require bootstrap-datepicker
 //= require_tree .
 
 // $(document).ready(function(){
