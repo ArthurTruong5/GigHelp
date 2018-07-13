@@ -19,8 +19,12 @@
  @import "magnific-popup";
 
  h3, .h3 {
-     font-size: 48px;
+     font-size: 24px;
      font-family: 'Poppins', sans-serif;
+ }
+
+ h1, .h1 {
+     font-size: 24px;
  }
 
 
@@ -160,3 +164,62 @@ p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form {
     color: #FFF;
     text-shadow: none;
 }
+
+.divider.divider-center, .divider.divider-center.divider-short {
+    text-align: left;
+}
+
+.divider i {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    line-height: 1;
+    font-size: 18px !important;
+    text-align: left;
+}
+
+.divider {
+    position: relative;
+    overflow: hidden;
+    margin: 35px 0;
+    color: #1ABC9C;
+    width: 100%;
+}
+
+.divider.divider-center:before {
+    left: -50% !important;
+    right: 0;
+    margin-left: -20px;
+}
+
+.divider.divider-center:after {
+    left: 50% !important;
+    right: 0;
+    margin-left: 20px;
+}
+
+.divider:after, .divider.divider-center:before, .divider.divider-center.divider-short:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 8px;
+    left: 30px;
+    height: 0;
+    border-top: 1px solid #EEE;
+}
+
+.task-show {
+      color: #444;
+      font-weight: 600;
+      line-height: 1.5;
+      margin: 0 0 30px 0;
+      font-family: 'Raleway', sans-serif;
+  }
+
+.task-show p {
+    line-height: 1.8;
+    }
+
+.form-row h3 {
+   font-size: 24px;
+    }
