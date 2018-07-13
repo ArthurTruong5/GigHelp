@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_091536) do
+ActiveRecord::Schema.define(version: 2018_07_13_080513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,8 +26,16 @@ ActiveRecord::Schema.define(version: 2018_07_12_091536) do
     t.index ["task_id"], name: "index_bids_on_task_id"
   end
 
-  create_table "homes", force: :cascade do |t|
-    t.string "index"
+  create_table "downloads", force: :cascade do |t|
+    t.string "ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
