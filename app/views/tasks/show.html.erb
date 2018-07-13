@@ -1,98 +1,54 @@
 <div class="page-header">
   <%= link_to tasks_path, class: 'btn btn-default' do %>
-  <span class="glyphicon glyphicon-list-alt"></span>
-  Back
-<% end %>
-<%= link_to edit_task_path(@task), class: 'btn btn-primary' do %>
-<span class="glyphicon glyphicon-pencil"></span>
-Edit
-<% end %>
-<h1>Show task</h1>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_task_path(@task), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show task</h1>
 </div>
 
 <dl class="dl-horizontal">
-<dt>Image:</dt>
-<dd><%= image_tag @task.image.url%></dd>
+  <dt>Title:</dt>
+  <dd><%= @task.title %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @task.description %></dd>
+
+  <dt>Due:</dt>
+  <dd><%= @task.due %></dd>
+
+  <dt>People:</dt>
+  <dd><%= @task.people %></dd>
+
+  <dt>Image:</dt>
+  <dd><%= image_tag @task.image.url%></dd>
 </dl>
 
-<section class="task-show">
-
-<div class="col-md-6 col-md-offset-1">
+<div class="col-md-7 col-md-offset-1">
 
 
-<div class="container">
-  <div class="row">
+  <h1 class="review_title"><%= @task.title %></h1>
+  <p><%= @task.description %></p>
 
-    <div class="task-details well col-md-10">
-    <h1>Task Name</h1>
-    <p><%= @task.title %></p>
-                			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Task Description</h1>
-    <p><%= @task.description %></p>
-                			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Due</h1>
-    <p><%= @task.due %></p>
-                			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>How many people is needed</h1>
-    <p><%= @task.people %></p>
-    </div>
+         <% if @bids.blank? %>
+         <p>Hi <%= current_user.name %>, would you like to bid?</p>
+           <p>Hi, if you would like to bid. Click on the bid button below.</p>
+           <%= link_to "Bid Task", new_task_bid_path(@task), class: "btn btn-danger" %>
+         <% else %>
+           <% @bids.each do |bid| %>
+             <div class="bids">
+               <p><%= bid.name %></p>
+               <p><%= bid.comment %></p>
+               <p><%= bid.offer %></p>
+             </div>
+           </div>
+          <p>Bid was created by <%= bid.name.capitalize %></p>
+           <div class="time_ago">
+            <p>Bid created <%= time_ago_in_words bid.created_at %> ago</p>
+           </div>
 
-    <div class="col-md-2">
-    <h1>Want to Bid?</h1>
-    <%= link_to "Bid Task", new_task_bid_path(@task), class: "btn btn-danger" %>
-    </div>
-
-  </div>
-
-</div>
-
-
-
-
-
-
-
-<% if @bids.blank? %>
-<p>Hi
-<%= current_user.name %>, would you like to bid?</p>
-<p>Hi, if you would like to bid. Click on the bid button below.</p>
-<%= link_to "Bid Task", new_task_bid_path(@task), class: "btn btn-danger" %>
-<% else %>
-<% @bids.each do |bid| %>
-
-<div class="container">
-
-  <div class="row">
-
-    <div class="form-row col-md-10 well">
-      <h1>Name</h1>
-      <p><%= bid.name %></p>
-            			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Comment</h1>
-    <p><%= bid.comment %></p>
-          			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Offer</h1>
-    <p>$<%= bid.offer %></p>
-          			<div class="divider"><i class="fas fa-cloud"></i></div>
-
-  </div>
-  <div class="col-md-6">
-    <p>Bid was created by
-      <%= bid.name.capitalize %></p>
-  </div>
-  <div class="time_ago col-md-6">
-    <p>Bid created
-      <%= time_ago_in_words bid.created_at %>
-      ago</p>
-  </div>
-</div>
-</div>
-</div>
-<% end %>
-
-<% end %>
-
-
-</div>
-
-</section>
+           <% end %>
+         <% end %>
