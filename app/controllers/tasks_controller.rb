@@ -6,12 +6,10 @@ class TasksController < ApplicationController
   def index
       @tasks = Task.all
       if params[:search].present?
-        logger.debug("22222222")
-        logger.debug(params[:search])
       @tasks = Task.perform_search(params[:search])
       else
       @tasks = Task.all
-    end
+      end
   end
 
   # GET /tasks/1
