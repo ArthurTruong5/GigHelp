@@ -15,6 +15,9 @@
     </div>
   </div>
   <div class="bottommargin-sm col-md-3">
+<%= f.input :start, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
+  </div>
+  <div class="bottommargin-sm col-md-3">
 <%= f.input :due, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
   </div>
 

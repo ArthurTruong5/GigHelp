@@ -1,91 +1,127 @@
-<section id="home">
-    <!-- unique id = home, used to point to a style in CSS -->
 
-    <div id="home-cover" class="bg-parallax animated fadeIn">
 
-      <div id="home-content-box">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
+        <section id="slider" class="slider-element slider-parallax swiper_wrapper full-screen clearfix">
 
-      <div class="title">
+        <div class="slider-parallax-inner">
 
-        <h3>Stop Dreaming.</h3>
-        <h3>Start Earning.</h3>
-        <h3>Shared Community.</h3>
-        <h3>Earn or Ask for Help with</h3>
-        <h3>GigHelp</h3>
+          <div class="fslider" data-speed="3000" data-pause="7500" data-animation="fade" data-arrows="false" data-pagi="false" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: #333;">
+            <div class="flexslider" style="height: 100% !important;">
+              <div class="slider-wrap" style="height: inherit;">
+                <div class="slide" style="background: url('demos/travel/images/slider/1.jpg') center center; background-size: cover; height: 100% !important;"></div>
+                <div class="slide" style="background: url('demos/travel/images/slider/2.jpg') center center; background-size: cover; height: 100% !important;"></div>
+                <div class="slide" style="background: url('demos/travel/images/slider/3.jpg') center center; background-size: cover; height: 100% !important;"></div>
+              </div>
+            </div>
+          </div>
 
-        <div id="button-home">
-          <%= link_to "Sign Up To View Task", tasks_path, class: "button btn btn-danger custom-button", style: "color: #fff;" %>
-        </div>
-      </div>
+          <div id="travel-slider-overlay">
 
-    </div>
+            <div class="vertical-middle">
 
-  </div>
+              <div class="container clearfix">
+
+                <div class="tabs travel-organiser-tabs clearfix" style="margin: 25px;">
+
+                  <ul class="tab-nav clearfix">
+                    <li><a href="#tab-flights" style="top: 0;
+                      background-color: #0092E7;"><i class="fas fa-people-carry"></i></i><span class="d-none d-md-inline-block">Tasks</span></a></li>
+                    <li><a href="#tab-hotels"><i class="fas fa-tasks"></i></i><span class="d-none d-md-inline-block">Bids</span></a></li>
+                    <li><a href="#tab-flights-hotels"><span class="d-block d-md-none"><i class="icon-plane"></i> + <i class="icon-building"></i></span><span class="d-none d-md-inline-block">Tasks + Bids <span class="badge badge-danger">Both</span></span></a></li>
+                    <li><a href="#tab-holidays"><i class="fas fa-location-arrow"></i><span class="d-none d-md-inline-block">Nearest Task Near You</span></a></li>
+                  </ul>
+
+                  <div class="tab-container">
+
+
+
+
+      <div class="task_search form-group">
+
+
+<%= form_tag(tasks_path, method: "get") do %>
+
+
+
+
+
+
+
+                    <div class="tab-content clearfix" id="tab-flights">
+                      <div class="heading-block nobottomborder bottommargin-sm clearfix">
+                        <h4 class="fleft">Find A Task</h4>
+                        <div class="btn-group fright">
+                          <button type="button" class="btn btn-danger btn-sm bgcolor border-color">Locally</button>
+                          <button type="button" class="btn btn-secondary btn-sm">Don't Mind Traveling</button>
+                        </div>
+                        <div class="clear"></div>
+                      </div>
+                      <form action="#" method="post" class="nobottommargin">
+                        <div class="row">
+                          <div class="col-md-10 col-12 bottommargin-sm">
+                            <label for="">From</label>
+
+
+                            <%= text_field_tag :search, nil, placeholder: "Eg. Melbourne, Australia", class: "md-form-control" %>
+
+                          </div>
+
+                          <div class="clear"></div>
+                          <div class="input-daterange travel-date-group col-md-9 bottommargin-sm">
+                            <div class="row">
+                              <div class="col-md-6 col-6">
+                                <label for="">When Task Starts</label>
+                            <%= text_field_tag :search, nil, placeholder: "Eg. Melbourne, Australia", class: "sm-form-control datepicker" %>
+                              </div>
+                              <div class="col-md-6 col-6">
+                                <label for="">When It Ends</label>
+                            <%= text_field_tag :search, nil, placeholder: "Eg. Melbourne, Australia", class: "sm-form-control datepicker" %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-md-3 bottommargin-sm">
+                            <label for="">People</label>
+                            <input type="number" min="1" max="10" value="" class="sm-form-control" name="end" placeholder="2">
+                          </div>
+                          <div class="col-md-12">
+                            <button class="button button-3d nomargin rightmargin-sm">Search Tasks</button>
+
+                            <a href="#" class="more-link fright" style="margin-top: 9px;">Advanced Search</a>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+
+
+
+
+
+<% end %>
 
 </div>
 
-        <div id="home-content-box-inner" class "text-center">
 
-          <div id="home-btn" data-aos="fade" data-aos-delay="200">
 
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
-
         </div>
 
+      </section>
+
+      <br><br><br><br><br><br>
+
+
+      <div class="task_search form-group">
+        <%= form_tag(tasks_path, method: "get") do %>
+          <%= text_field_tag :search, nil, placeholder: "Search tasks ...", class: "form-control" %>
+          <%= text_field_tag :search, nil, placeholder: "due", class: "form-control"  %>
+          <%= submit_tag "", style: "display: none;" %>
+        <% end %>
       </div>
-
-
-    </div>
-
-  </section>
-
-  <section id="about-us">
-    <div class="container">
-      <h2>Modal Login Example</h2>
-      <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-default btn-lg" id="myBtn">Login</button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
-          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 style="color:red;"><span class="glyphicon glyphicon-lock"></span> Login</h4>
-            </div>
-            <div class="modal-body">
-              <form role="form">
-                <div class="form-group">
-                  <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-                  <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'Enter email', input_html: { class: 'input-md', id: 'usrname' } %>
-                </div>
-                <div class="form-group">
-                  <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-                  <%= f.input :password, required: true, autofocus: true, label: false, placeholder: 'Enter password', input_html: { class: 'input-md', id: 'usrname' } %>
-                </div>
-                <div class="checkbox">
-                  <label><%= f.input :remember_me, as: :boolean, style: 'margin: 0px;' if devise_mapping.rememberable? %></label>
-                </div>
-                <button type="submit" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-default btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-              <%= f.button :submit, "Log in", class: 'btn btn-default btn-default pull-left button-with-image' %>
-              <% end %>
-              <p>Not a member? <a href="#">Sign Up</a></p>
-              <p>Forgot <a href="#">Password?</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
