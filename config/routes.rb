@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   resources :tasks do
     resources :bids
+    resources :locations
   end
-  resources :locations
+
   get 'about/index'
   get 'search/index' => 'search#index'
   devise_for :users, controllers: { registration: 'registrations' }, controllers: { sessions: 'sessions' }, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

@@ -15,6 +15,7 @@
             <th>Start</th>
             <th>Due</th>
             <th>People Needed</th>
+            <th>Location</th>
             <th>Image</th>
         <th></th>
         <th></th>
@@ -25,9 +26,36 @@
       <% @tasks.each do |task| %>
         <%= content_tag :tr, id: dom_id(task), class: dom_class(task) do %>
                       <td><%= task.title %></td>
+
+
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= task.title %></h5>
+                      <p class="card-text"><%= task.description %></p>
+                      <p></p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+
+
                       <td><%= task.description %></td>
                       <td><%= task.start %></td>
                       <td><%= task.due %></td>
+                      <td><%= task.location %></td>
                       <td><%= task.people %></td>
 
                     <td><%= link_to 'Show', task %></td>

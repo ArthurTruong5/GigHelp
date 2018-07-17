@@ -1,5 +1,6 @@
 class LocationsController < ApplicationController
   def index
+    @task = Task.find(params[:task_id])
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => 'distance')
     else

@@ -51,7 +51,7 @@
         </ul>
 
 
-          <%= form_tag(tasks_path, method: "get") do %>
+    <%= form_tag(tasks_path, method: "get") do %>
 
         <div class="tab-container">
 
@@ -69,27 +69,16 @@
               <form action="#" method="post" class="nobottommargin">
                 <div class="row">
                   <div class="col-md-10 col-12 bottommargin-sm">
-                    <label for="">From</label>
-
-                            <%= text_field_tag :search, nil, placeholder: "Eg. Melbourne, Australia", class: "md-form-control" %>
+                    <label for="">Title</label>
+                            <%= text_field_tag :search, nil, placeholder: "What type of task are you looking for?", class: "md-form-control" %>
 
                   </div>
 
                   <div class="clear"></div>
-                  <div class="input-daterange travel-date-group col-md-9 bottommargin-sm">
-                    <div class="row">
-                      <div class="col-md-6 col-6">
-                        <label for="">When Task Starts</label>
+                  <div class="col-md-10 bottommargin-sm">
+                    <label for="">Location</label>
 
-                      </div>
-                      <div class="col-md-6 col-6">
-                        <label for="">When It Ends</label>
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3 bottommargin-sm">
-                    <label for="">People</label>
+                    <%= text_field_tag :search, nil, placeholder: "Example - Sydney, Australia", class: "md-form-control" %>
 
                   </div>
                   <div class="col-md-12">

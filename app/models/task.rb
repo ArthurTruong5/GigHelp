@@ -1,9 +1,9 @@
 class Task < ApplicationRecord
   include PgSearch
-
      pg_search_scope :search,
                      against: [
-                       :title
+                       :title,
+                       :location
                      ],
                      using: {
                        tsearch: {
@@ -11,8 +11,6 @@ class Task < ApplicationRecord
                          normalization: 2
                        }
                      }
-
-
   def self.perform_search(keyword)
     if keyword.present?
     then Task.search(keyword)
@@ -23,6 +21,7 @@ class Task < ApplicationRecord
 
   mount_uploader :image, ImageUploader
   has_many :bids, dependent: :destroy
+  has_many :locations, dependent: :destroy
 
 
 

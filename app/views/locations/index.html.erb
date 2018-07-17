@@ -1,4 +1,4 @@
-<%= form_tag locations_path, :method => :get do %>
+<%= form_tag task_locations_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search Near", :name => nil %>
@@ -16,11 +16,9 @@
       <td><%= location.address %></td>
       <td><%= location.latitude %></td>
       <td><%= location.longitude %></td>
-      <td><%= link_to "Show", location %></td>
-      <td><%= link_to "Edit", edit_location_path(location) %></td>
-      <td><%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete %></td>
+
     </tr>
   <% end %>
 </table>
 
-<p><%= link_to "New Location", new_location_path %></p>
+<p><%= link_to "New Location", new_task_location_path %></p>
