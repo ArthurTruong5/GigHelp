@@ -70,7 +70,7 @@ class BidsController < ApplicationController
     def set_bid
       @bid = Bid.find(params[:id])
     end
-
+    
     def set_task
       @task = Task.find(params[:task_id])
     end

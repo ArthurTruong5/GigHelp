@@ -12,8 +12,10 @@
       <tr>
             <th>Title</th>
             <th>Description</th>
+            <th>Start</th>
             <th>Due</th>
             <th>People Needed</th>
+            <th>Location</th>
             <th>Image</th>
         <th></th>
         <th></th>
@@ -23,12 +25,14 @@
     <tbody>
       <% @tasks.each do |task| %>
         <%= content_tag :tr, id: dom_id(task), class: dom_class(task) do %>
+
                       <td><%= task.title %></td>
                       <td><%= task.description %></td>
+                      <td><%= task.start %></td>
                       <td><%= task.due %></td>
+                      <td><%= task.location %></td>
                       <td><%= task.people %></td>
-                  
-                    <td><%= link_to 'Show', task %></td>
+          <td><%= link_to 'Show', task %></td>
           <td><%= link_to 'Edit', edit_task_path(task) %></td>
           <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
@@ -36,3 +40,33 @@
     </tbody>
   </table>
 </div>
+
+<% @tasks.each do |task| %>
+  <%= content_tag :tr, id: dom_id(task), class: dom_class(task) do %>
+
+<div id="DIV_1">
+	<div id="DIV_2">
+		<div id="DIV_3">
+			Task
+		</div> <a href="#" id="A_4"><%= image_tag(task.image_url) %></a>
+		<div id="DIV_6">
+			$1.2m<span id="SPAN_7">Leasehold</span>
+		</div>
+	</div>
+	<div id="DIV_13">
+		<h3 id="H3_14">
+			<a href="#" id="A_15"><%= task.title %></a>
+      <div class="line" style="margin-top: 15px; margin-bottom: 15px;"></div>
+      <div class="row no-gutters box-arthur">
+        <div class="col-lg-6 arthur-box-inner">Start:<pre><%= task.start %></div>
+        <div class="col-lg-6 arthur-box-inner">Due:<pre><%= task.due %></div>
+        <div class="col-lg-6 arthur-box-inner">Location:<pre><%= task.location %></div>
+        <div class="col-lg-6 arthur-box-inner">People:<pre><%= task.people %></div>
+        <div class="col-lg-6 arthur-box-inner">Description:<pre><%= task.description %></div>
+
+      </div>
+	</div>
+</div>
+
+<% end %>
+<% end %>

@@ -31,6 +31,9 @@ gem 'magnific-popup-rails'
 gem 'omniauth-google-oauth2'
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
                               :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'geocoder'
+gem 'pg_search'
+gem "aws-sdk-s3", require: false
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

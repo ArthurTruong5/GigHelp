@@ -13,6 +13,12 @@
     <div class="form-group col-md-7">
     <%= f.input :description, class: "form-control", placeholder: "Enter in details" %>
     </div>
+    <div class="form-group col-md-6">
+    <%= f.input :location, class: "form-control", placeholder: "Enter in details" %>
+    </div>
+  </div>
+  <div class="bottommargin-sm col-md-3">
+<%= f.input :start, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>
   </div>
   <div class="bottommargin-sm col-md-3">
 <%= f.input :due, as: :string, input_html: { class: "datepicker", value: Time.now.strftime('%d-%m-%Y') } %>

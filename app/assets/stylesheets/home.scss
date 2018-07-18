@@ -8,10 +8,10 @@
   height: 100%;
 }
 
-#home-cover {
+.vertical-middle{
   /* .. means go one step back and find IMG folder */
   height: 100vh;
-  background: linear-gradient( rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5) ),url('hero.jpg');
+  background: linear-gradient( rgba(0,0,0,0.2), rgba(0, 0, 0, 0.2) ),url('7.jpg');
   /* So Background Image doesn't Loop */
   background-repeat: no-repeat;
   /* Will scale the background image as large as possible */
@@ -352,4 +352,10 @@ body.stretched #header.full-header #primary-menu ul li.mega-menu .mega-menu-cont
 	float: left !important;
 	border: none !important;
 	margin: 0 10px 0 0 !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

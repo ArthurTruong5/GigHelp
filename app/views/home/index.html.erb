@@ -1,24 +1,99 @@
-<section id="home">
-    <!-- unique id = home, used to point to a style in CSS -->
+<section id="slider" class="slider-element slider-parallax swiper_wrapper full-screen clearfix">
 
-    <div id="home-cover" class="bg-parallax animated fadeIn">
+  <div class="slider-parallax-inner">
 
-      <div id="home-content-box">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-
-      <div class="title">
-
-        <h3>Stop Dreaming.</h3>
-        <h3>Start Earning.</h3>
-        <h3>Shared Community.</h3>
-        <h3>Earn or Ask for Help with</h3>
-        <h3>GigHelp</h3>
-
-        <div id="button-home">
-          <%= link_to "Sign Up To View Task", tasks_path, class: "button btn btn-danger custom-button", style: "color: #fff;" %>
+    <div class="fslider" data-speed="3000" data-pause="7500" data-animation="fade" data-arrows="false" data-pagi="false" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-color: #333;">
+      <div class="flexslider" style="height: 100% !important;">
+        <div class="slider-wrap" style="height: inherit;">
+          <div class="slide" style="background: url('demos/travel/images/slider/1.jpg') center center; background-size: cover; height: 100% !important;"></div>
+          <div class="slide" style="background: url('demos/travel/images/slider/2.jpg') center center; background-size: cover; height: 100% !important;"></div>
+          <div class="slide" style="background: url('demos/travel/images/slider/3.jpg') center center; background-size: cover; height: 100% !important;"></div>
         </div>
+      </div>
+    </div>
+
+    <div id="travel-slider-overlay">
+
+      <div class="vertical-middle">
+
+        <div class="container clearfix">
+
+          <div class="tabs travel-organiser-tabs clearfix" style="margin: 25px;">
+
+            <ul class="tab-nav clearfix">
+              <li>
+                <a href="#tab-flights" style="top: 0;
+                      background-color: #0092E7;">
+                  <i class="fas fa-people-carry"></i>
+                </i>
+                <span class="d-none d-md-inline-block">Tasks</span></a>
+            </li>
+            <li>
+              <a href="#tab-hotels">
+                <i class="fas fa-tasks"></i>
+              </i>
+              <span class="d-none d-md-inline-block">Bids</span></a>
+          </li>
+          <li>
+            <a href="#tab-flights-hotels">
+              <span class="d-block d-md-none">
+                <i class="icon-plane"></i>
+                +
+                <i class="icon-building"></i>
+              </span><span class="d-none d-md-inline-block">Tasks + Bids
+                <span class="badge badge-danger">Both</span></span></a>
+          </li>
+          <li>
+            <a href="#tab-holidays">
+              <i class="fas fa-location-arrow"></i>
+              <span class="d-none d-md-inline-block">Nearest Task Near You</span></a>
+          </li>
+        </ul>
+
+
+    <%= form_tag(tasks_path, method: "get") do %>
+
+        <div class="tab-container">
+
+          <div class="task_search form-group">
+
+            <div class="tab-content clearfix" id="tab-flights">
+              <div class="heading-block nobottomborder bottommargin-sm clearfix">
+                <h4 class="fleft">Find A Task</h4>
+                <div class="btn-group fright">
+                  <button type="button" class="btn btn-danger btn-sm bgcolor border-color">Locally</button>
+                  <button type="button" class="btn btn-secondary btn-sm">Don't Mind Traveling</button>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <form action="#" method="post" class="nobottommargin">
+                <div class="row">
+                  <div class="col-md-10 col-12 bottommargin-sm">
+                    <label for="">Title</label>
+                            <%= text_field_tag :search, nil, placeholder: "What type of task are you looking for?", class: "md-form-control" %>
+
+                  </div>
+
+                  <div class="clear"></div>
+                  <div class="col-md-10 bottommargin-sm">
+                    <label for="">Location</label>
+
+                    <%= text_field_tag :search, nil, placeholder: "Example - Sydney, Australia", class: "md-form-control" %>
+
+                  </div>
+                  <div class="col-md-12">
+                    <button class="button button-3d nomargin rightmargin-sm">Search Tasks</button>
+
+                    <a href="#" class="more-link fright" style="margin-top: 9px;">Advanced Search</a>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
     </div>
@@ -27,19 +102,10 @@
 
 </div>
 
-        <div id="home-content-box-inner" class "text-center">
+</div>
 
-          <div id="home-btn" data-aos="fade" data-aos-delay="200">
+</section>
 
+<% end %>
 
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
+<br><br><br><br><br><br>
