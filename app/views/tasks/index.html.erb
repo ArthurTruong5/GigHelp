@@ -25,44 +25,34 @@
     <tbody>
       <% @tasks.each do |task| %>
         <%= content_tag :tr, id: dom_id(task), class: dom_class(task) do %>
+
                       <td><%= task.title %></td>
-
-
-
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6">
-
-                  <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="..." alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title"><%= task.title %></h5>
-                      <p class="card-text"><%= task.description %></p>
-                      <p></p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-
-
-
                       <td><%= task.description %></td>
                       <td><%= task.start %></td>
                       <td><%= task.due %></td>
                       <td><%= task.location %></td>
                       <td><%= task.people %></td>
-
-                    <td><%= link_to 'Show', task %></td>
+          <td><%= link_to 'Show', task %></td>
           <td><%= link_to 'Edit', edit_task_path(task) %></td>
           <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       <% end %>
     </tbody>
   </table>
+</div>
+
+<div id="DIV_1">
+	<div id="DIV_2">
+		<div id="DIV_3">
+			For Sale
+		</div> <a href="#" id="A_4"><img src="demos/real-estate/images/items/1.jpg" alt="Image 1" id="IMG_5" /></a>
+		<div id="DIV_6">
+			$1.2m<span id="SPAN_7">Leasehold</span>
+		</div>
+	</div>
+	<div id="DIV_13">
+		<h3 id="H3_14">
+			<a href="#" id="A_15">3 Bedroom Villa</a>
+		</h3> <span id="SPAN_16">Seminyak Area</span> <a href="#" id="A_17"><i id="I_18"></i></a>
+	</div>
 </div>
