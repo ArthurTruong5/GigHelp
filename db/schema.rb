@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_17_071143) do
+ActiveRecord::Schema.define(version: 2018_07_18_013106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_07_17_071143) do
     t.date "start"
     t.bigint "location_id"
     t.string "location"
+    t.integer "price"
     t.index ["location_id"], name: "index_tasks_on_location_id"
   end
 
@@ -92,4 +93,4 @@ ActiveRecord::Schema.define(version: 2018_07_17_071143) do
   add_foreign_key "bids", "tasks"
   add_foreign_key "locations", "tasks"
   add_foreign_key "tasks", "locations"
-end 
+end

@@ -243,3 +243,26 @@ p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form {
 
 
 }
+
+.box-arthur {
+
+  margin-top: 5px;
+
+}
+
+.box-arthur span {
+  color: #1ABC9C !important;
+  display: inline;
+}
+
+.box-arthur pre {
+  display: inline;
+  margin: 10px;
+  font-size: 10px;
+  color: #1ABC9C !important;
+  padding: 5px;
+}
+
+.arthur-box-inner {
+  font-size: 15px;
+}
