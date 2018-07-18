@@ -17,6 +17,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "magnific-popup";
+ @import "media";
 
  h3, .h3 {
      font-size: 48px;
@@ -266,3 +267,27 @@ p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form {
 .arthur-box-inner {
   font-size: 15px;
 }
+
+.flex-direction{
+  flex-direction:row;
+}
+
+.div2{
+  background-color:#fff;
+  width:314px;
+  height:132px;
+}
+
+.div2{
+  width:300px;
+  height:107px;
+}
+.div2 .div10{
+  line-height:107px;
+}
+
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)

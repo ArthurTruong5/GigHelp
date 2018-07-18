@@ -19,6 +19,8 @@
     border: 0px none rgb(85, 85, 85);
     font: normal normal 400 normal 14px / 21px Roboto, sans-serif;
     outline: rgb(85, 85, 85) none 0px;
+    float: left;
+width: 16%;
 }/*#DIV_1*/
 
 #DIV_1:after {

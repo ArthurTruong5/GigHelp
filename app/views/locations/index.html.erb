@@ -16,8 +16,10 @@
       <td><%= location.address %></td>
       <td><%= location.latitude %></td>
       <td><%= location.longitude %></td>
-
+      <td><%= link_to "Show", task_location_path(@task,location) %></td>
+      <td><%= link_to "Edit", edit_task_location_path(@task,location) %></td>
     </tr>
+
   <% end %>
 </table>
 

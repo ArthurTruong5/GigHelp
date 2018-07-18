@@ -20,6 +20,7 @@ class Task < ApplicationRecord
 
 
   mount_uploader :image, ImageUploader
+  validates :image, presence: true
   has_many :bids, dependent: :destroy
   has_many :locations, dependent: :destroy
 
