@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'about/index'
   get 'search/index' => 'search#index'
-  devise_for :users, controllers: { registration: 'registrations' }, controllers: { sessions: 'sessions' }, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: { registration: 'registrations' }, controllers: { sessions: 'sessions' }, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' } do
+    resources :tasks
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

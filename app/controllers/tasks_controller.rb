@@ -1,9 +1,11 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :owned_post, only: [:edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
+      @task = Task.new(:user_id => @user)
       if params[:search].present?
       @tasks = Task.perform_search(params[:search])
       else
@@ -29,11 +31,11 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.build(task_params)
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
+        format.html { redirect_to new_task_location_path(@task), notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -79,6 +81,13 @@ class TasksController < ApplicationController
     end
 
 
+    def owned_post
+      @task = Task.find(params[:id])
+      unless current_user == @task.user
+      flash[:alert] = "That task doesn't belong to you!"
+      redirect_to tasks_path
+    end
+  end
 
 
 end

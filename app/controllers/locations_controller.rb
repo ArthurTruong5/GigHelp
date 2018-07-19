@@ -4,7 +4,6 @@ before_action :set_task, only:[:new, :create]
 
   def index
     @task = Task.find(params[:task_id])
-    @project = Project.find(@task.project_id)
     if params[:search].present?
       @locations = Location.near(params[:search], 50, :order => 'distance')
     else
@@ -29,7 +28,7 @@ before_action :set_task, only:[:new, :create]
     @location.task_id = @task.id
 
     if @location.save
-      redirect_to task_locations_path :notice => "Successfully created location."
+      redirect_to task_location_path(@task,@location), :notice => "Successfully created location."
     else
       render :new
     end

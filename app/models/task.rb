@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  validates :user_id, presence: true
+  belongs_to :user
   include PgSearch
      pg_search_scope :search,
                      against: [

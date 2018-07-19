@@ -28,10 +28,12 @@
                     <div class="col-lg-6 arthur-box-inner">Location:<pre><%= task.location %></div>
                     <div class="col-lg-6 arthur-box-inner">People:<pre><%= task.people %></div>
                     <div class="col-lg-6 arthur-box-inner">Description:<pre><%= task.description %></div>
-                    <% if current_user == @task.user %>
+                <% if current_user == @task.user %>
+                  <% else %>
                   <div class="col-lg-6 arthur-box-inner" style="font-size: 15px;"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-                    <% end %>
                   </div>
+                  <% end %>
+
               </div>
             </div>
           </div>
