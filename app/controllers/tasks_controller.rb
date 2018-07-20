@@ -35,6 +35,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
+        ModelMailer.send_simple_message(current_user).deliver
         format.html { redirect_to new_task_location_path(@task), notice: 'Task was successfully created.' }
         format.json { render :show, status: :created, location: @task }
       else
@@ -77,7 +78,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :description, :due, :people, :image, :start, :location, :price)
+      params.require(:task).permit(:title, :description, :due, :people, :image, :start, :price)
     end
 
 
@@ -88,6 +89,4 @@ class TasksController < ApplicationController
       redirect_to tasks_path
     end
   end
-
-
 end

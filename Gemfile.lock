@@ -135,6 +135,8 @@ GEM
       responders
       warden (~> 1.2.3)
     devise-bootstrap-views (0.0.11)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.1)
     excon (0.62.0)
     execjs (2.7.0)
@@ -170,6 +172,8 @@ GEM
       shellany (~> 0.0)
       thor (>= 0.18.1)
     hashie (3.5.7)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -201,6 +205,8 @@ GEM
     magnific-popup-rails (1.1.0)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
+    mailgun-ruby (1.1.10)
+      rest-client (~> 2.0)
     marcel (0.3.2)
       mimemagic (~> 0.3.2)
     method_source (0.9.0)
@@ -217,6 +223,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     nenv (0.3.0)
+    netrc (0.11.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -286,6 +293,10 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
     sass (3.5.6)
@@ -328,6 +339,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.14)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.6.2)
@@ -365,6 +379,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   magnific-popup-rails
+  mailgun-ruby (~> 1.1.6)
   mini_magick
   omniauth-facebook
   omniauth-google-oauth2

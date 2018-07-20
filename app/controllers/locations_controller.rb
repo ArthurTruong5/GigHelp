@@ -13,6 +13,7 @@ before_action :set_task, only:[:new, :create]
 
   def show
     @location = Location.find(params[:id])
+    @task = Task.find(params[:task_id])
   end
 
   def new
@@ -39,9 +40,10 @@ before_action :set_task, only:[:new, :create]
   end
 
   def update
+    @task = Task.find(params[:task_id])
     @location = Location.find(params[:id])
     if @location.update_attributes(allowed_params)
-      redirect_to @location, :notice  => "Successfully updated location."
+      redirect_to task_location_path(@task,@location), :notice  => "Successfully updated location but please check your address if it's correct."
     else
       render :edit
     end
