@@ -14,6 +14,7 @@ before_action :set_task, only:[:new, :create]
   def show
     @location = Location.find(params[:id])
     @task = Task.find(params[:task_id])
+    @bids = Bid.where(task_id: @task.id).order("created_at DESC")
   end
 
   def new
