@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'payment/index'
+  devise_for :admins
   resources :tasks do
-    resources :bids
     resources :locations
+    resources :bids
   end
 
   get 'about/index'

@@ -45,47 +45,6 @@ Edit
 </div>
 
 
-<% if @bids.blank? %>
-<p>Hi
-<%= current_user.name %>, would you like to bid?</p>
-<p>Hi, if you would like to bid. Click on the bid button below.</p>
-<%= link_to "Bid Task", new_task_bid_path(@task), class: "btn btn-danger" %>
-<% else %>
-<% @bids.each do |bid| %>
-
-<div class="container">
-
-  <div class="row">
-
-    <div class="form-row col-md-10 well">
-      <h1>Name</h1>
-      <p><%= bid.name %></p>
-            			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Comment</h1>
-    <p><%= bid.comment %></p>
-          			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Offer</h1>
-    <p>$<%= bid.offer %></p>
-          			<div class="divider"><i class="fas fa-cloud"></i></div>
-
-  </div>
-  <div class="col-md-6">
-    <p>Bid was created by
-      <%= bid.name.capitalize %></p>
-  </div>
-  <div class="time_ago col-md-6">
-    <p>Bid created
-      <%= time_ago_in_words bid.created_at %>
-      ago</p>
-  </div>
-</div>
-</div>
-</div>
-<% end %>
-
-<% end %>
-
-
 </div>
 
 </section>

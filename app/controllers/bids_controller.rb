@@ -2,6 +2,7 @@ class BidsController < ApplicationController
   before_action :set_bid, only: [:show, :edit, :update, :destroy]
   before_action :set_task
 
+
   # GET /bids
   # GET /bids.json
   def index
@@ -25,14 +26,19 @@ class BidsController < ApplicationController
   # POST /bids
   # POST /bids.json
   def create
+
+    # @location = Location.find(params[:location_id])
     @task = Task.find(params[:task_id])
+    @location = @task.location
+    logger.debug("222222222222")
+    logger.debug(@location)
     @bid = Bid.new(bid_params)
     @bid.user_id = current_user.id
     @bid.task_id = @task.id
 
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to @task, notice: 'Bid was successfully created.' }
+        format.html { redirect_to task_location_path(@task,@location), notice: 'Bid was successfully created.' }
         format.json { render :show, status: :created, location: @bid }
       else
         format.html { render :new }
@@ -70,10 +76,12 @@ class BidsController < ApplicationController
     def set_bid
       @bid = Bid.find(params[:id])
     end
-    
+
     def set_task
       @task = Task.find(params[:task_id])
     end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bid_params

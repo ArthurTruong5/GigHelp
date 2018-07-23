@@ -10,7 +10,7 @@
         <strong>Address:</strong>
         <%= @location.address %>
       </p>
-      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=AIzaSyAvQchP4YLseAbDqVxO1lzvUEcr0ej-_r0",
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
                     class: 'img-fluid img-rounded'%>
 
 
@@ -46,23 +46,24 @@
 </div>
 
 
+
 <div class="container">
 
 <div class="row">
+
 
 <div class="col-md-12 well">
 
 <br><br>
 
+
 <% if @bids.blank? %>
 <p>Hi
 <%= current_user.name %>, would you like to bid?</p>
 <p>Hi, if you would like to bid. Click on the bid button below.</p>
-<%= link_to "Bid Task", new_task_bid_path(@task), class: "btn btn-danger" %>
+<%= link_to "Bid Task", new_task_bid_path(@task,:location_id => @location.id), class: "btn btn-danger" %>
 <% else %>
 <% @bids.each do |bid| %>
-
-
       <h1>Name</h1>
       <p><%= bid.name %></p>
             			<div class="divider"><i class="fas fa-cloud"></i></div>
@@ -71,8 +72,9 @@
           			<div class="divider"><i class="fas fa-cloud"></i></div>
     <h1>Offer</h1>
     <p>$<%= bid.offer %></p>
-          			<div class="divider"><i class="fas fa-cloud"></i></div>
-
+    <% if @task.user_id == current_user.id %>
+      <%= link_to "Accept Offer", payment_index_path, class: "btn btn-default" %>
+    <% end %>
   </div>
   <div class="col-md-6">
     <p>Bid was created by

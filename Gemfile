@@ -35,6 +35,7 @@ gem 'geocoder'
 gem 'pg_search'
 gem "aws-sdk-s3", require: false
 gem 'mailgun-ruby', '~>1.1.6'
+gem 'stripe'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
