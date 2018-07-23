@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+before_action :set_location, only: [:show, :edit, :update, :destroy]
 before_action :set_task, only:[:new, :create]
 
 
@@ -12,7 +13,9 @@ before_action :set_task, only:[:new, :create]
   end
 
   def show
-    @location = Location.find(params[:id])
+    @task = Task.find(params[:task_id])
+    # @location = Location.find(params[:id])
+    @bids = Bid.where(task_id: @task.id).order("created_at DESC")
   end
 
   def new
@@ -35,26 +38,30 @@ before_action :set_task, only:[:new, :create]
   end
 
   def edit
-    @location = Location.find(params[:id])
+    # @location = Location.find(params[:id])
   end
 
   def update
-    @location = Location.find(params[:id])
+    @task = Task.find(params[:task_id])
+    # @location = Location.find(params[:id])
     if @location.update_attributes(allowed_params)
-      redirect_to @location, :notice  => "Successfully updated location."
+      redirect_to task_location_path(@task,@location), :notice  => "Successfully updated location but please check your address if it's correct."
     else
       render :edit
     end
   end
 
   def destroy
-    @location = Location.find(params[:id])
+    # @location = Location.find(params[:id])
     @location.destroy
 
     redirect_to task_locations_url, :notice => "Successfully destroyed location."
   end
 
   private
+  def set_location
+    @location = Location.find(params[:id])
+  end
 
   def allowed_params
     params.require(:location).permit(:id, :address, :latitude, :longitude)

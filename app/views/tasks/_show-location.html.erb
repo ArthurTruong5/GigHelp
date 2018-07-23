@@ -1,25 +1,3 @@
-<div class="page-header">
-  <%= link_to tasks_path, class: 'btn btn-default' do %>
-  <span class="glyphicon glyphicon-list-alt"></span>
-  Back
-<% end %>
-<%= link_to edit_task_path(@task), class: 'btn btn-primary' do %>
-<span class="glyphicon glyphicon-pencil"></span>
-Edit
-<% end %>
-<h1>Show task</h1>
-</div>
-
-<dl class="dl-horizontal">
-<dt>Image:</dt>
-<dd><%= image_tag @task.image.url%></dd>
-</dl>
-
-<section class="task-show">
-
-<div class="col-md-6 col-md-offset-1">
-
-
 <div class="container">
   <div class="row">
 
@@ -43,8 +21,3 @@ Edit
   </div>
 
 </div>
-
-
-</div>
-
-</section>

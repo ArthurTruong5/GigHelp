@@ -29,22 +29,13 @@
                 <span class="d-none d-md-inline-block">Tasks</span></a>
             </li>
             <li>
-              <a href="#tab-hotels">
+              <a href="tasks#new">
                 <i class="fas fa-tasks"></i>
               </i>
-              <span class="d-none d-md-inline-block">Bids</span></a>
+              <span class="d-none d-md-inline-block">Post a Task</span></a>
           </li>
           <li>
-            <a href="#tab-flights-hotels">
-              <span class="d-block d-md-none">
-                <i class="icon-plane"></i>
-                +
-                <i class="icon-building"></i>
-              </span><span class="d-none d-md-inline-block">Tasks + Bids
-                <span class="badge badge-danger">Both</span></span></a>
-          </li>
-          <li>
-            <a href="#tab-holidays">
+            <a href="locations#index">
               <i class="fas fa-location-arrow"></i>
               <span class="d-none d-md-inline-block">Nearest Task Near You</span></a>
           </li>
@@ -58,33 +49,19 @@
           <div class="task_search form-group">
 
             <div class="tab-content clearfix" id="tab-flights">
-              <div class="heading-block nobottomborder bottommargin-sm clearfix">
-                <h4 class="fleft">Find A Task</h4>
-                <div class="btn-group fright">
-                  <button type="button" class="btn btn-danger btn-sm bgcolor border-color">Locally</button>
-                  <button type="button" class="btn btn-secondary btn-sm">Don't Mind Traveling</button>
-                </div>
-                <div class="clear"></div>
-              </div>
               <form action="#" method="post" class="nobottommargin">
                 <div class="row">
-                  <div class="col-md-10 col-12 bottommargin-sm">
-                    <label for="">Title</label>
-                            <%= text_field_tag :search, nil, placeholder: "What type of task are you looking for?", class: "md-form-control" %>
-
-                  </div>
 
                   <div class="clear"></div>
                   <div class="col-md-10 bottommargin-sm">
-                    <label for="">Location</label>
+                    <label for="">Find A Task</label>
 
-                    <%= text_field_tag :search, nil, placeholder: "Example - Sydney, Australia", class: "md-form-control" %>
+                    <%= text_field_tag :search, nil, placeholder: "What kind of task are you looking for?", class: "md-form-control" %>
 
                   </div>
                   <div class="col-md-12">
                     <button class="button button-3d nomargin rightmargin-sm">Search Tasks</button>
 
-                    <a href="#" class="more-link fright" style="margin-top: 9px;">Advanced Search</a>
                   </div>
                 </div>
               </form>

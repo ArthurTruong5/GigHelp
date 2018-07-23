@@ -1,27 +1,128 @@
-<p>
-  <strong>Address:</strong>
-  <%= @location.address %>
-</p>
-<p>
-  <strong>Latitude:</strong>
-  <%= @location.latitude %>
-</p>
-<p>
-  <strong>Longitude:</strong>
-  <%= @location.longitude %>
-</p>
 
-<%= image_tag("http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}") %>
 
-<h3>Nearby locations</h3>
-<ul>
-<% for location in @location.nearbys(10) %>
-  <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles)</li>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12 well">
+
+      <p>
+        <strong>Address:</strong>
+        <%= @location.address %>
+      </p>
+      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
+                    class: 'img-fluid img-rounded'%>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-12 well">
+
+      <h3>Nearby task</h3>
+      <ul>
+
+      <% @locations.blank? || @task.user_id == current_user.id %>
+      <%= render 'locations/update-form' %>
+      <% for location in @location.nearbys(20) %>
+        <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) (<%= @task.title %>)</li>
+      <% end %>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="container">
+
+<div class="row">
+
+
+<div class="col-md-12 well">
+
+<br><br>
+
+
+<% if @bids.blank? %>
+<p>Hi
+<%= current_user.name %>, would you like to bid?</p>
+<p>Hi, if you would like to bid. Click on the bid button below.</p>
+<%= link_to "Bid Task", new_task_bid_path(@task,:location_id => @location.id), class: "btn btn-danger" %>
+<% else %>
+<% @bids.each do |bid| %>
+      <h1>Name</h1>
+      <p><%= bid.name %></p>
+            			<div class="divider"><i class="fas fa-cloud"></i></div>
+    <h1>Comment</h1>
+    <p><%= bid.comment %></p>
+          			<div class="divider"><i class="fas fa-cloud"></i></div>
+    <h1>Offer</h1>
+    <p>$<%= bid.offer %></p>
+    <% if @task.user_id == current_user.id %>
+      <%= link_to "Accept Offer", payment_index_path, class: "btn btn-default" %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <p>Bid was created by
+      <%= bid.name.capitalize %></p>
+  </div>
+  <div class="time_ago col-md-6">
+    <p>Bid created
+      <%= time_ago_in_words bid.created_at %>
+      ago</p>
+  </div>
 <% end %>
-</ul>
 
-<p>
-  <%= link_to "Edit", edit_task_location_path(@location) %> |
-  <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
-  <%= link_to "View All", task_locations_path %>
-</p>
+<% end %>
+</div>
+</div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-6 well">
+
+      <h1>Title</h1>
+      <p><%= @task.title %></p>
+                        <div class="divider"><i class="fas fa-cloud"></i></div>
+      <h1>Task Description</h1>
+      <p><%= @task.description %></p>
+                        <div class="divider"><i class="fas fa-cloud"></i></div>
+      <h1>Start</h1>
+      <p><%= @task.start %></p>
+                        <div class="divider"><i class="fas fa-cloud"></i></div>
+      <h1>Due</h1>
+      <p><%= @task.due %></p>
+                        <div class="divider"><i class="fas fa-cloud"></i></div>
+      <h1>How many people is needed</h1>
+      <p><%= @task.people %></p>
+
+
+      <p>
+        <%= link_to "Edit", edit_task_location_path(@location) %> |
+        <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
+        <%= link_to "View All", task_locations_path %>
+      </p>
+
+
+    </div>
+
+  </div>
+
+</div>
