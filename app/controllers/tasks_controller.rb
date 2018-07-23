@@ -36,6 +36,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         format.html { redirect_to new_task_location_path(@task), notice: 'Task was successfully created.' }
+        ModelMailer.send_simple_message(current_user).deliver
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
