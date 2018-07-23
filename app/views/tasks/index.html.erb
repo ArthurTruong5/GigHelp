@@ -25,7 +25,6 @@
                   <div class="row no-gutters box-arthur">
                     <div class="col-lg-6 arthur-box-inner">Start:<pre><%= task.start %></div>
                     <div class="col-lg-6 arthur-box-inner">Due:<pre><%= task.due %></div>
-                    <div class="col-lg-6 arthur-box-inner">Location:<pre><%= task.location %></div>
                     <div class="col-lg-6 arthur-box-inner">People:<pre><%= task.people %></div>
                     <div class="col-lg-6 arthur-box-inner">Description:<pre><%= task.description %></div>
                 <% if current_user == @task.user %>
@@ -39,11 +38,5 @@
           </div>
         </div>
     </div>
-
-
-
-
-
-
 <% end %>
 <% end %>
