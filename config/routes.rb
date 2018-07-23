@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  get 'payment/index'
   devise_for :admins
   resources :tasks do
     resources :locations
     resources :bids
   end
+  resources :charges
 
   get 'about/index'
   get 'search/index' => 'search#index'
