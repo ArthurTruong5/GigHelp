@@ -45,7 +45,7 @@ Before developing GiGhelp, I thought through questions such as:
 
 ## Wireframes
 
-![alt text])(https://i.imgur.com/RtNlZ1G.png)
+![alt text](https://i.imgur.com/RtNlZ1G.png)
 
 ## Planning and Workflow
 
