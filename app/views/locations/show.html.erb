@@ -1,128 +1,152 @@
 
 
-<div class="container">
+						<!-- Pagination
+						============================================= -->
 
-  <div class="row">
+						<!-- .pager end -->
 
-    <div class="col-md-12 well">
-
-      <p>
-        <strong>Address:</strong>
-        <%= @location.address %>
-      </p>
-      <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
-                    class: 'img-fluid img-rounded'%>
+					</div>
 
 
-    </div>
+					<div class="sidebar nobottommargin col_last clearfix">
+						<div class="sidebar-widgets-wrap">
 
-  </div>
+							<div class="widget clearfix">
 
-</div>
+								<h4>Location</h4>
+								<div id="post-list-footer">
 
+									<div class="spost clearfix">
+										<div class="entry-image">
+											<a href="#" class="nobg"><img src="images/events/thumbs/1.jpg" alt=""></a>
+										</div>
+										<div class="entry-c">
+											<div class="entry-title">
+                        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
+                                      class: 'img-fluid img-rounded'%>
+											</div>
+										</div>
+									</div>
 
+									<div class="spost clearfix">
+										<div class="entry-image">
+											<a href="#" class="nobg"><img src="images/events/thumbs/2.jpg" alt=""></a>
+										</div>
+										<div class="entry-c">
+											<div class="entry-title">
+                        <% for location in @location.nearbys(20) %>
+                          <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) (<%= @task.title %>)</li>
+                        <% end %>
+											</div>
+										</div>
+									</div>
 
+									<div class="spost clearfix">
+										<div class="entry-image">
+											<a href="#" class="nobg"><img src="images/events/thumbs/3.jpg" alt=""></a>
+										</div>
+										<div class="entry-c">
+											<div class="entry-title">
+                        <% @locations.blank? || @task.user_id == current_user.id %>
+                        <%= render 'locations/update-form' %>
+											</div>
+										</div>
+									</div>
 
-<div class="container">
+								</div>
 
-  <div class="row">
+							</div>
+                            </div>
+                                          </div>
+              <div class="container">
 
-    <div class="col-md-12 well">
+              <div class="row">
 
-      <h3>Nearby task</h3>
-      <ul>
+                <section id="content">
 
-      <% @locations.blank? || @task.user_id == current_user.id %>
-      <%= render 'locations/update-form' %>
-      <% for location in @location.nearbys(20) %>
-        <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) (<%= @task.title %>)</li>
-      <% end %>
-      </ul>
+                			<div class="content-wrap">
 
-    </div>
+                				<div class="container clearfix">
 
-  </div>
+                					<div class="postcontent nobottommargin">
 
-</div>
-
-
-
-<div class="container">
-
-<div class="row">
-
-
-<div class="col-md-12 well">
-
-<br><br>
-
-
-<% if @bids.blank? %>
-<p>Hi
-<%= current_user.name %>, would you like to bid?</p>
-<p>Hi, if you would like to bid. Click on the bid button below.</p>
-<%= link_to "Bid Task", new_task_bid_path(@task,:location_id => @location.id), class: "btn btn-danger" %>
-<% else %>
-<% @bids.each do |bid| %>
-      <h1>Name</h1>
-      <p><%= bid.name %></p>
-            			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Comment</h1>
-    <p><%= bid.comment %></p>
-          			<div class="divider"><i class="fas fa-cloud"></i></div>
-    <h1>Offer</h1>
-    <p>$<%= bid.offer %></p>
-    <% if @task.user_id == current_user.id %>
-      <%= link_to "Accept Offer", new_charge_path(:bid_id => bid.id), class: "btn btn-default" %>
-    <% end %>
-  </div>
-  <div class="col-md-6">
-    <p>Bid was created by
-      <%= bid.name.capitalize %></p>
-  </div>
-  <div class="time_ago col-md-6">
-    <p>Bid created
-      <%= time_ago_in_words bid.created_at %>
-      ago</p>
-  </div>
-<% end %>
-
-<% end %>
-</div>
-</div>
-</div>
-
-<div class="container">
-
-  <div class="row">
-
-    <div class="col-md-6 well">
-
-      <h1>Title</h1>
-      <p><%= @task.title %></p>
-                        <div class="divider"><i class="fas fa-cloud"></i></div>
-      <h1>Task Description</h1>
-      <p><%= @task.description %></p>
-                        <div class="divider"><i class="fas fa-cloud"></i></div>
-      <h1>Start</h1>
-      <p><%= @task.start %></p>
-                        <div class="divider"><i class="fas fa-cloud"></i></div>
-      <h1>Due</h1>
-      <p><%= @task.due %></p>
-                        <div class="divider"><i class="fas fa-cloud"></i></div>
-      <h1>How many people is needed</h1>
-      <p><%= @task.people %></p>
+                						<div id="posts" class="events small-thumbs">
 
 
-      <p>
-        <%= link_to "Edit", edit_task_location_path(@location) %> |
-        <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
-        <%= link_to "View All", task_locations_path %>
-      </p>
+
+                							<div class="entry clearfix">
+                								<div class="entry-image">
+                									<a href="#">
+                										<%= image_tag @task.image_url %>
+                										<div class="entry-date"><span><%= time_ago_in_words @task.created_at %></span></div>
+                									</a>
+                								</div>
+                								<div class="entry-c">
+                									<div class="entry-title">
+                										<h2><a href="#"><%= @task.title %></a></h2>
+                									</div>
+                									<ul class="entry-meta clearfix">
+                										<li><span class="badge badge-danger">People: <%= @task.people %></span></li>
+                										<li><a href="#"><i class="icon-time"></i> <%= @task.start %> - <%= @task.due %></a></li>
+                										<li><a href="#"><i class="icon-map-marker2"></i> <%= @location.address %></a></li>
+                									</ul>
+                									<div class="entry-content">
+                										<p><%= @task.description %></p>
+                                    <%= link_to "Edit", edit_task_location_path(@location) %> |
+                                    <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
+                                    <%= link_to "View All", tasks_path %>
+                									</div>
+                								</div>
 
 
-    </div>
+                							</div>
 
-  </div>
 
-</div>
+                						</div>
+              <div class="col-md-6 well">
+
+              <br><br>
+
+
+
+              <% if @bids.blank? %>
+              <p>Hi, if you would like to bid. Click on the bid button below.</p>
+              <%= link_to "Bid Task", new_task_bid_path(@task,:location_id => @location.id), class: "btn btn-danger" %>
+              <% else %>
+                <% @bids.each do |bid| %>
+              <div class="entry clearfix">
+                <div class="entry-c">
+                  <div class="entry-title">
+                    <h2><a href="#"><%= bid.name %></a></h2>
+                  </div>
+                  <ul class="entry-meta clearfix">
+                    <li><span class="badge badge-danger"><h3>$<%= bid.offer %></h3></span></li>
+                    <li><a href="#"><i class="icon-time"></i> <%= bid.name.capitalize %> </a></li>
+                    <li><a href="#"><i class="icon-map-marker2"></i> Bid created <%= time_ago_in_words bid.created_at %></a></li>
+                  </ul>
+                  <div class="entry-content">
+                    <p><%= bid.comment %></p>
+                  </div>
+                  <% if @task.user_id == current_user.id %>
+                    <%= link_to "Accept Offer", new_charge_path(:bid_id => bid.id), class: "btn btn-default" %>
+                  <% end %>
+                </div>
+              </div>
+              <% end %>
+              <% end %>
+
+              <div class="row mb-3">
+                <div class="col-12">
+                  <a href="#" class="btn btn-outline-secondary float-left">&larr; Older</a>
+                  <a href="#" class="btn btn-outline-dark float-right">Newer &rarr;</a>
+                </div>
+              </div>
+
+
+
+
+              </div>
+
+
+
+		</section><!-- #content end -->
