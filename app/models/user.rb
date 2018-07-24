@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :tasks, dependent: :destroy
-  after_create :send_welcome_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
