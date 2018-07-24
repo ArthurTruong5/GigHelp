@@ -13,8 +13,7 @@
               <div id="DIV_2">
                 <div id="DIV_3">
                   Task
-                  <% @location = task.location %>
-                </div> <%= link_to image_tag(task.image_url),task_location_path(task,@location) %>
+                </div> <%= link_to image_tag(task.image_url),task_path(task) %>
                 <div id="DIV_6">
                   $<%= task.price %><span id="SPAN_7">Autowin</span>
                 </div>
@@ -26,6 +25,7 @@
                   <div class="row no-gutters box-arthur">
                     <div class="col-lg-6 arthur-box-inner">Start:<pre><%= task.start %></div>
                     <div class="col-lg-6 arthur-box-inner">Due:<pre><%= task.due %></div>
+                    <div class="col-lg-6 arthur-box-inner">Location:<pre><%= task.location %></div>
                     <div class="col-lg-6 arthur-box-inner">People:<pre><%= task.people %></div>
                     <div class="col-lg-6 arthur-box-inner">Description:<pre><%= task.description %></div>
                 <% if current_user == @task.user %>
@@ -39,5 +39,11 @@
           </div>
         </div>
     </div>
+
+
+
+
+
+
 <% end %>
 <% end %>
