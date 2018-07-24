@@ -1,3 +1,4 @@
+## [GigHelp Link](https://cryptic-brook-68449.herokuapp.com/)
 # GigHelp ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
 GigHelp is a community gig marketplace which provides people to outsource everyday work. Users are able to choose a task and people in the community can bid for the task.
