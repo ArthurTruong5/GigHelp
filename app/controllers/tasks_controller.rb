@@ -11,6 +11,7 @@ class TasksController < ApplicationController
       else
       @tasks = Task.all
       end
+
   end
 
   # GET /tasks/1

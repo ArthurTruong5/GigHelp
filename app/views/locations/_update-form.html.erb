@@ -1,15 +1,14 @@
 <%= simple_form_for([@task, @location]) do |f|  %>
-<h2>Update your address</h2>
 
           <form>
             <div class="form-group col-md-7">
-              <label for="inputAddress">Address</label>
+              <label for="inputAddress">Update Address</label>
               <%= f.text_field :address, :id => "inputAddress", :class => "form-control", :placeholder => "1234 Main St" %>
             </div>
             <div class="form-group">
             </div>
             <div class="col-md-12">
-            <button type="submit" class="btn btn-primary">Update Address</button>
+            <button type="submit" class="btn btn-primary">Address</button>
             </div>
           </form>
 
