@@ -43,6 +43,10 @@ Before developing GiGhelp, I thought through questions such as:
 
 ![alt text](https://i.imgur.com/TKkXHkb.png)
 
+## Project Plan - Estimation
+
+![alt text](https://i.imgur.com/qNCqDsq.png)
+
 ## Wireframes
 
 ![alt text](https://i.imgur.com/RtNlZ1G.png)
