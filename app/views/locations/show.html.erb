@@ -11,9 +11,13 @@
 									<div class="spost clearfix">
 										<div class="entry-c">
 											<div class="entry-title">
+                        <% if @location.nearbys(20) != nil %>
                       <% for location in @location.nearbys(20) %>
                         <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) (<%= @task.title %>)</li>
                       <% end %>
+                      <%else%>
+                      <li>nothing here</li>
+                      <%end%>
 											</div>
 										</div>
 									</div>
@@ -80,12 +84,12 @@
                 						</div>
               <div class="col-md-12 well">
 
-              <br><br>
 
-              <% if @bids.blank? %>
+              <% unless @bids.where("user_id = ?", current_user.id).exists? %>
               <p>Hi, if you would like to bid. Click on the bid button below.</p>
               <%= link_to "Bid Task", new_task_bid_path(@task,:location_id => @location.id), class: "btn btn-danger" %>
-              <% else %>
+
+              <% end %>
                 <% @bids.each do |bid| %>
               <div class="entry clearfix">
                 <div class="entry-c">
@@ -105,7 +109,6 @@
                   <% end %>
                 </div>
               </div>
-              <% end %>
               <% end %>
 
               <div class="row mb-3">

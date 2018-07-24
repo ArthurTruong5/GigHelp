@@ -14,7 +14,7 @@
                 <div id="DIV_3">
                   Task
                   <% @location = Location.find(task.location.id) %>
-                </div> <%= link_to image_tag(task.image_url),task_location_path(task,@location) %>
+                </div> <%= link_to image_tag(task.image_url(:thumb), :width => 355, :height => 235),task_location_path(task,@location) %>
                 <div id="DIV_6">
                   $<%= task.price %><span id="SPAN_7">Autowin</span>
                 </div>
