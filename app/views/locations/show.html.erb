@@ -66,7 +66,7 @@
                 									</ul>
                 									<div class="entry-content">
                 										<p><%= @task.description %></p>
-                                    <p>                            <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
+                                    <p><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
                                                                               class: 'img-fluid img-rounded'%></p>
                                     <%= link_to "Edit", edit_task_location_path(@location) %> |
                                     <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
@@ -101,7 +101,7 @@
                     <p><%= bid.comment %></p>
                   </div>
                   <% if @task.user_id == current_user.id %>
-                    <%= link_to "Accept Offer", new_charge_path(:bid_id => bid.id), class: "btn btn-default" %>
+                  <%= link_to "Accept Offer", new_charge_path(:bid_id => bid.id), class: "btn btn-default" %>
                   <% end %>
                 </div>
               </div>
