@@ -1,52 +1,8 @@
-<section id="content">
 
-			<div class="content-wrap">
-
-				<div class="container clearfix">
-
-					<div class="postcontent nobottommargin">
-
-						<div id="posts" class="events small-thumbs">
-
-
-
-							<div class="entry clearfix">
-								<div class="entry-image">
-									<a href="#">
-										<%= image_tag @task.image_url %>
-										<div class="entry-date"><span><%= time_ago_in_words @task.created_at %></span></div>
-									</a>
-								</div>
-								<div class="entry-c">
-									<div class="entry-title">
-										<h2><a href="#"><%= @task.title %></a></h2>
-									</div>
-									<ul class="entry-meta clearfix">
-										<li><span class="badge badge-danger">People: <%= @task.people %></span></li>
-										<li><a href="#"><i class="icon-time"></i> <%= @task.start %> - <%= @task.due %></a></li>
-										<li><a href="#"><i class="icon-map-marker2"></i> <%= @location.address %></a></li>
-									</ul>
-									<div class="entry-content">
-										<p><%= @task.description %></p>
-									</div>
-								</div>
-
-                <%= link_to "Edit", edit_task_location_path(@location) %> |
-                <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
-                <%= link_to "View All", task_locations_path %>
-							</div>
-
-
-						</div>
 
 						<!-- Pagination
 						============================================= -->
-						<div class="row mb-3">
-							<div class="col-12">
-								<a href="#" class="btn btn-outline-secondary float-left">&larr; Older</a>
-								<a href="#" class="btn btn-outline-dark float-right">Newer &rarr;</a>
-							</div>
-						</div>
+
 						<!-- .pager end -->
 
 					</div>
@@ -106,7 +62,47 @@
 
               <div class="row">
 
+                <section id="content">
 
+                			<div class="content-wrap">
+
+                				<div class="container clearfix">
+
+                					<div class="postcontent nobottommargin">
+
+                						<div id="posts" class="events small-thumbs">
+
+
+
+                							<div class="entry clearfix">
+                								<div class="entry-image">
+                									<a href="#">
+                										<%= image_tag @task.image_url %>
+                										<div class="entry-date"><span><%= time_ago_in_words @task.created_at %></span></div>
+                									</a>
+                								</div>
+                								<div class="entry-c">
+                									<div class="entry-title">
+                										<h2><a href="#"><%= @task.title %></a></h2>
+                									</div>
+                									<ul class="entry-meta clearfix">
+                										<li><span class="badge badge-danger">People: <%= @task.people %></span></li>
+                										<li><a href="#"><i class="icon-time"></i> <%= @task.start %> - <%= @task.due %></a></li>
+                										<li><a href="#"><i class="icon-map-marker2"></i> <%= @location.address %></a></li>
+                									</ul>
+                									<div class="entry-content">
+                										<p><%= @task.description %></p>
+                                    <%= link_to "Edit", edit_task_location_path(@location) %> |
+                                    <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
+                                    <%= link_to "View All", tasks_path %>
+                									</div>
+                								</div>
+
+
+                							</div>
+
+
+                						</div>
               <div class="col-md-6 well">
 
               <br><br>
@@ -138,6 +134,13 @@
               </div>
               <% end %>
               <% end %>
+
+              <div class="row mb-3">
+                <div class="col-12">
+                  <a href="#" class="btn btn-outline-secondary float-left">&larr; Older</a>
+                  <a href="#" class="btn btn-outline-dark float-right">Newer &rarr;</a>
+                </div>
+              </div>
 
 
 

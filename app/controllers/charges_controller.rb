@@ -19,6 +19,7 @@ class ChargesController < ApplicationController
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
+    ModelMailer.transaction_message(current_user).deliver
 
   rescue Stripe::CardError => e
     flash[:error] = e.message
