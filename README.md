@@ -39,6 +39,14 @@ Before developing GiGhelp, I thought through questions such as:
 
 ![alt text](https://i.imgur.com/wviWq7N.jpg)
 
+## Workflow Diagram
+
+![alt text](https://i.imgur.com/TKkXHkb.png)
+
+## Planning and Workflow
+
+![alt text](https://i.imgur.com/z6mg0BI.jpg)
+
 ## Technology Stack
 
 * HTML/CSS
