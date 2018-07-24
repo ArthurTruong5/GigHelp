@@ -63,6 +63,21 @@ Before developing GiGhelp, I thought through questions such as:
 * HTML/CSS
 * Ruby on Rails
 
+## Future
+
+* Fix CSS/HTML issues
+* Make it more responsive
+* Add Javascript (React) for the front end
+* Add Ajax
+* Create a user profile
+* Make it more community based - e.g add subtask; like subreddits on Reddit so community has more control.
+
+
+## User Story
+
+When a user logins, we want to show the home page and give them a feel of what GigHelp is about. Background image of a person on a computer to to represent that they are finding/bidding a task. When the user wants to see what kind of task are out there, they can use the search to display all task from the task index views. For example, writing 'cleaning' would show all titles that relate to cleaning. The user has easy access to register through Google omniauth. Easy usability is what I wanted to to aim for. The user can also have free reign to post a task or bid on a existing task. They can also search nearby task around them near their corresponding location.
+
+
 ## Homepage design
 
 Designing the homepage was a challenging process. One of the requirements was to add a search functionality and I wanted a way users could find task by title. This would simplify the process of what users needed. e.g cleaning would show every title that has "cleaning" keyword and is filtered through pg_search gem.
@@ -94,10 +109,6 @@ I used https://www.pexels.com/ for free copyright images and picked certain imag
 Users are able to see the information about the task. The user who creates the task can also accept offers. Note that only the user that CREATES the task can see the accept button offer. The user will be proceeded to the next window for payment. Payment will be then sent out to the bid user once task is confirmed finished.
 
 ![alt text](https://i.imgur.com/9IEu2vL.png)
-
-## Future
-
-
 
 
 
