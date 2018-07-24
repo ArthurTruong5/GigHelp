@@ -6,7 +6,7 @@ class ChargesController < ApplicationController
 
   def create
     # Amount in cents
-    @amount = @bid.offer.to_i * 100
+    @amount = params[:offer].to_i * 100
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -15,11 +15,14 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       :customer    => customer.id,
-      :amount      => @amount.offer,
+      :amount      => @amount,
       :description => 'Rails Stripe customer',
       :currency    => 'usd'
     )
     ModelMailer.transaction_message(current_user).deliver
+
+    redirect_to root_path
+    flash[:success] = "Successful payment"
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

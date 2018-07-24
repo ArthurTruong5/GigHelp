@@ -15,4 +15,5 @@
           data-description="A month's subscription"
           data-amount="<%= @bid.offer * 100 %>"
           data-locale="auto"></script>
+          <%= hidden_field_tag :offer, @bid.offer %>
 <% end %>

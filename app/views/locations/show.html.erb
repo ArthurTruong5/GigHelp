@@ -1,14 +1,6 @@
 
 
-						<!-- Pagination
-						============================================= -->
-
-						<!-- .pager end -->
-
-					</div>
-
-
-					<div class="sidebar nobottommargin col_last clearfix">
+					<div class="sidebar nobottommargin col_last clearfix well">
 						<div class="sidebar-widgets-wrap">
 
 							<div class="widget clearfix">
@@ -17,34 +9,16 @@
 								<div id="post-list-footer">
 
 									<div class="spost clearfix">
-										<div class="entry-image">
-											<a href="#" class="nobg"><img src="images/events/thumbs/1.jpg" alt=""></a>
-										</div>
 										<div class="entry-c">
 											<div class="entry-title">
-                        <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
-                                      class: 'img-fluid img-rounded'%>
+                      <% for location in @location.nearbys(20) %>
+                        <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) (<%= @task.title %>)</li>
+                      <% end %>
 											</div>
 										</div>
 									</div>
 
 									<div class="spost clearfix">
-										<div class="entry-image">
-											<a href="#" class="nobg"><img src="images/events/thumbs/2.jpg" alt=""></a>
-										</div>
-										<div class="entry-c">
-											<div class="entry-title">
-                        <% for location in @location.nearbys(20) %>
-                          <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) (<%= @task.title %>)</li>
-                        <% end %>
-											</div>
-										</div>
-									</div>
-
-									<div class="spost clearfix">
-										<div class="entry-image">
-											<a href="#" class="nobg"><img src="images/events/thumbs/3.jpg" alt=""></a>
-										</div>
 										<div class="entry-c">
 											<div class="entry-title">
                         <% @locations.blank? || @task.user_id == current_user.id %>
@@ -92,6 +66,8 @@
                 									</ul>
                 									<div class="entry-content">
                 										<p><%= @task.description %></p>
+                                    <p>                            <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@location.latitude},#{@location.longitude}&markers=#{@location.latitude},#{@location.longitude}&zoom=14&size=640x400&key=#{Rails.application.credentials.google_map[:api_key]}",
+                                                                              class: 'img-fluid img-rounded'%></p>
                                     <%= link_to "Edit", edit_task_location_path(@location) %> |
                                     <%= link_to "Destroy", task_location_path, :confirm => 'Are you sure?', :method => :delete %> |
                                     <%= link_to "View All", tasks_path %>
@@ -101,13 +77,10 @@
 
                 							</div>
 
-
                 						</div>
-              <div class="col-md-6 well">
+              <div class="col-md-12 well">
 
               <br><br>
-
-
 
               <% if @bids.blank? %>
               <p>Hi, if you would like to bid. Click on the bid button below.</p>
