@@ -35,6 +35,10 @@ Before developing GiGhelp, I thought through questions such as:
 
 * How can we incorporate payment systems that we've been learning?
 
+## ERD
+
+![alt text](https://i.imgur.com/wviWq7N.jpg)
+
 ## Technology Stack
 
 * HTML/CSS
