@@ -3,6 +3,8 @@
 
 GigHelp is a community gig marketplace which provides people to outsource everyday work. Users are able to choose a task and people in the community can bid for the task.
 
+## [Repo Link](https://github.com/ArthurTruong5/GigHelp)
+
 ## Installation
 
 To install
@@ -92,6 +94,8 @@ I used https://www.pexels.com/ for free copyright images and picked certain imag
 Users are able to see the information about the task. The user who creates the task can also accept offers. Note that only the user that CREATES the task can see the accept button offer. The user will be proceeded to the next window for payment. Payment will be then sent out to the bid user once task is confirmed finished.
 
 ![alt text](https://i.imgur.com/9IEu2vL.png)
+
+## Future
 
 
 
