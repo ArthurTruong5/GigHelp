@@ -13,7 +13,7 @@
 											<div class="entry-title">
                         <% if @location.nearbys(20) != nil %>
                       <% for location in @location.nearbys(20) %>
-                        <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) (<%= @task.title %>)</li>
+                        <li><%= link_to location.address, task_location_path %> (<%= location.distance.round(2) %> miles) - This task is near you</li>
                       <% end %>
                       <%else%>
                       <li>nothing here</li>
