@@ -17,6 +17,7 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @location = Location.find(task.location.id)
     @bids = Bid.where(task_id: @task.id).order("created_at DESC")
   end
 
